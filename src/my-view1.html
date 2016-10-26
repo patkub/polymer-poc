@@ -12,6 +12,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="my-view1">
+
   <template>
     <style include="shared-styles">
       :host {
@@ -21,12 +22,26 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
     </style>
 
-    <div class="card">
-      <div class="circle">1</div>
-      <h1>View One</h1>
-      <p>Ut labores minimum atomorum pro. Laudem tibique ut has.
-      <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
-    </div>
+    <template is="dom-bind">
+       <firebase-collection
+         order-by-child="height"
+         limit-to-first="3"
+         location="https://dinosaur-facts.firebaseio.com/dinosaurs"
+         data="{{dinosaurs}}"></firebase-collection>
+       <template is="dom-repeat" items="[[dinosaurs]]" as="dinosaur">
+         <style include="shared-styles">
+           :host {
+             display: block;
+             padding: 10px;
+           }
+         </style>
+         <div class="card">
+           <h1>[[dinosaur.__firebaseKey__]]</h1>
+           <p>Height: <span>[[dinosaur.height]]</span></p>
+         </div>
+       </template>
+     </template>
+
   </template>
 
   <script>
