@@ -16,18 +16,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         location="https://antuple.firebaseio.com/projects/mainProjects/"
         data="{{main-projects}}"></firebase-collection>
       <template is="dom-repeat" items="[[main-projects]]" as="project">
-        <style include="shared-styles">
-          :host {
-            display: block;
-            padding: 10px;
-          }
-        </style>
-        <div class="card">
-          <h1>[[project.__firebaseKey__]]</h1>
-          <img src="[[project.image]]" height="300px"></img>
-          <p>[[project.description]]</p>
-          <p><a href="[[project.link]]">View Project</a></p>
-        </div>
+        <main-project
+          name="[[project.__firebaseKey__]]"
+          desc="[[project.description]]"
+          image="[[project.image]]"
+          link="[[project.link]]"></main-project>
       </template>
 
       <firebase-collection
