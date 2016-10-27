@@ -6,11 +6,11 @@
   "directories": {
     "test": "test"
   },
-  "dependencies": {
-    "gulp-vulcanize": "^6.1.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
     "gulp-vulcanize": "^6.1.0"
   },
   "scripts": {

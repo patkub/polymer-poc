@@ -8,6 +8,10 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 
+<link rel="import" href="view-projects.html">
+<link rel="import" href="view-websites.html">
+<link rel="import" href="my-view404.html">
+
 <dom-module id="antuple-app">
   <template>
     <style>
@@ -95,8 +99,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       properties: {
         page: {
           type: String,
-          reflectToAttribute: true,
-          observer: '_pageChanged'
+          reflectToAttribute: true
         }
       },
 
@@ -106,16 +109,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       _routePageChanged: function(page) {
         this.page = page || 'projects';
-      },
-
-      _pageChanged: function(page) {
-        // Load page import on demand. Show 404 page if fails
-        var resolvedPageUrl = this.resolveUrl('view-' + page + '.html');
-        this.importHref(resolvedPageUrl, null, this._showPage404, true);
-      },
-
-      _showPage404: function() {
-        this.page = 'my-view404';
       }
     });
   </script>
