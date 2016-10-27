@@ -1,10 +1,10 @@
 {
   "name": "antuple-polymer",
-  "version": "1.0.0",
   "description": "[![Build Status](https://travis-ci.org/PolymerElements/polymer-starter-kit.svg?branch=master)](https://travis-ci.org/PolymerElements/polymer-starter-kit)",
-  "main": "service-worker.js",
-  "directories": {
-    "test": "test"
+  "version": "1.0.0",
+  "author": "Patrick Kubiak",
+  "bugs": {
+    "url": "https://github.com/patkub/polymer-poc/issues"
   },
   "dependencies": {},
   "devDependencies": {
@@ -13,17 +13,17 @@
     "gulp-replace": "^0.5.4",
     "gulp-vulcanize": "^6.1.0"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "directories": {
+    "test": "test"
   },
+  "homepage": "https://github.com/patkub/polymer-poc#readme",
+  "license": "ISC",
+  "main": "service-worker.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/patkub/polymer-poc.git"
   },
-  "author": "Patrick Kubiak",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/patkub/polymer-poc/issues"
-  },
-  "homepage": "https://github.com/patkub/polymer-poc#readme"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }
