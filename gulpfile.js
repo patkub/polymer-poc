@@ -11,5 +11,5 @@ gulp.task('default', function () {
             inlineCss: true,
             stripComments: true
         }))
-        .pipe(gulp.dest('dest'));
+        .pipe(gulp.dest('build'));
 });
