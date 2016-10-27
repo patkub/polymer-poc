@@ -35,7 +35,5 @@ gulp.task('replace', function() {
 
 gulp.task('copy', function() {
     gulp.src('./bower_components/webcomponentsjs/webcomponents-lite.min.js').pipe(gulp.dest('./build'));
-    gulp.src('./service-worker.js').pipe(gulp.dest('./build'));
-    gulp.src('./sw-precache-config.js').pipe(gulp.dest('./build'));
     gulp.src('./assets/**/*').pipe(gulp.dest('./build/assets'));
 });
