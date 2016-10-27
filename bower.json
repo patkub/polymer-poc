@@ -1,7 +1,7 @@
 {
-  "name": "polymer-starter-kit",
+  "name": "Antuple",
   "authors": [
-    "The Polymer Authors"
+    "Patrick Kubiak"
   ],
   "dependencies": {
     "app-layout": "PolymerElements/app-layout#^0.10.0",

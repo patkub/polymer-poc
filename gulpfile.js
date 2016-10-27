@@ -36,4 +36,6 @@ gulp.task('replace', function() {
 gulp.task('copy', function() {
     gulp.src('./bower_components/webcomponentsjs/webcomponents-lite.min.js').pipe(gulp.dest('./build'));
     gulp.src('./assets/**/*').pipe(gulp.dest('./build/assets'));
+    gulp.src('./manifest.json').pipe(gulp.dest('./build'));
+    gulp.src('./images/**/*').pipe(gulp.dest('./build/images'));
 });
