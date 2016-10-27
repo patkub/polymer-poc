@@ -8,23 +8,72 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 
-
 <dom-module id="view-projects">
   <template>
-    <style include="shared-styles">
-      :host {
-        display: block;
+    <template is="dom-bind">
+      <firebase-collection
+        order-by-child="id"
+        location="https://antuple.firebaseio.com/projects/mainProjects/"
+        data="{{main-projects}}"></firebase-collection>
+      <template is="dom-repeat" items="[[main-projects]]" as="project">
+        <style include="shared-styles">
+          :host {
+            display: block;
+            padding: 10px;
+          }
+        </style>
+        <div class="card">
+          <h1>[[project.__firebaseKey__]]</h1>
+          <img src="[[project.image]]" height="300px"></img>
+          <p>[[project.description]]</p>
+          <p><a href="[[project.link]]">View Project</a></p>
+        </div>
+      </template>
 
-        padding: 10px;
-      }
-    </style>
+      <firebase-collection
+        order-by-child="id"
+        location="https://antuple.firebaseio.com/projects/featureProjects/"
+        data="{{feature-projects}}"></firebase-collection>
+      <template is="dom-repeat" items="[[feature-projects]]" as="project">
+        <style include="shared-styles">
+          :host {
+            display: block;
+            padding: 10px;
+          }
+        </style>
+        <div class="card">
+          <h1>[[project.__firebaseKey__]]</h1>
+          <img src="[[project.image]]" width="100%"></img>
+          <p>[[project.description]]</p>
+          <p><a href="[[project.link]]">View Webpage</a></p>
+        </div>
+      </template>
 
-    <div class="card">
-      <div class="circle">2</div>
-      <h1>View Two</h1>
-      <p>Ea duis bonorum nec, falli paulo aliquid ei eum.</p>
-      <p>Id nam odio natum malorum, tibique copiosae expetenda mel ea.Detracto suavitate repudiandae no eum. Id adhuc minim soluta nam.Id nam odio natum malorum, tibique copiosae expetenda mel ea.</p>
-    </div>
+      <firebase-collection
+        order-by-child="id"
+        location="https://antuple.firebaseio.com/projects/projects/"
+        data="{{projects}}"></firebase-collection>
+
+
+        <div class="horizontal layout" style="height:100%">
+
+            <template is="dom-repeat" items="[[projects]]" as="project">
+              <style include="shared-styles">
+                :host {
+                  display: block;
+                  padding: 10px;
+                }
+              </style>
+                <div class="card">
+                  <h1>[[project.__firebaseKey__]]</h1>
+                  <img src="[[project.image]]" width="100%" max-height="300px"></img>
+                  <p>[[project.description]]</p>
+                  <p><a href="[[project.link]]">View Webpage</a></p>
+                </div>
+            </template>
+
+        </div>
+    </template>
   </template>
 
   <script>

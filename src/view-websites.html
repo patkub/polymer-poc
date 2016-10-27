@@ -34,12 +34,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <h1>[[website.__firebaseKey__]]</h1>
           <img src="[[website.image]]" width="100%"></img>
           <p>[[website.description]]</p>
-          <p><a href="[[website.link]]">View Webpage</a></p>
+
+          <a href="[[website.link]]" tabindex="-1">
+            <paper-button>
+              <iron-icon icon="link"></iron-icon>View Webpage
+            </paper-button>
+          <a>
         </div>
       </template>
     </template>
   </template>
-  
+
   <script>
     Polymer({
       is: 'view-websites'
