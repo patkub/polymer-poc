@@ -12,7 +12,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
     "gulp-vulcanize": "^6.1.0",
-    "sw-precache": "^4.2.1"
+    "sw-precache": "^4.2.3"
   },
   "directories": {
     "test": "test"
