@@ -1,5 +1,7 @@
 # Antuple Polymer POC
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/patkub/polymer-poc.svg)](https://greenkeeper.io/)
+
 Proof of concept personal website build using Polymer Web Components.  
 Learning polymer.
 
